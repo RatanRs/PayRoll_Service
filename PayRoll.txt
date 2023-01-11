@@ -39,3 +39,47 @@ Records: 2  Duplicates: 0  Warnings: 0
 
 mysql> insert into employee_payroll(name,salary,startdate)values("Gavde",10000,'2022-11-22');
 Query OK, 1 row affected (0.10 sec)
+
+mysql> select * from employee_payroll;
++----+-------+--------+------------+
+| id | name  | salary | startdate  |
++----+-------+--------+------------+
+|  1 | Ratan |  10000 | 2022-11-22 |
+|  2 | Romil |  20000 | 2022-10-23 |
+|  3 | Gavde |  10000 | 2022-11-22 |
++----+-------+--------+------------+
+3 rows in set (0.00 sec)
+
+
+
+mysql> select * from employee_payroll;
++----+-------+--------+------------+
+| id | name  | salary | startdate  |
++----+-------+--------+------------+
+|  1 | Ratan |  10000 | 2022-11-22 |
+|  2 | Romil |  20000 | 2022-10-23 |
+|  3 | Gavde |  10000 | 2022-11-22 |
++----+-------+--------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select salary from employee_payroll where name="Ratan";
++--------+
+| salary |
++--------+
+|  10000 |
++--------+
+1 row in set (0.00 sec)
+
+
+mysql> select * from employee_payroll where startdate between cast('2022-10-22' as date) and date(now());
++----+-------+--------+------------+
+| id | name  | salary | startdate  |
++----+-------+--------+------------+
+|  1 | Ratan |  10000 | 2022-11-22 |
+|  2 | Romil |  20000 | 2022-10-23 |
+|  3 | Gavde |  10000 | 2022-11-22 |
++----+-------+--------+------------+
+3 rows in set (0.04 sec)
+
+
+
