@@ -101,3 +101,45 @@ mysql> desc employee_payroll;
 5 rows in set (0.08 sec)
 
 
+mysql> update employee_payroll set salary=9000 where name="Gavde";
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+-------+--------+--------+------------+
+| id | name  | gender | salary | startdate  |
++----+-------+--------+--------+------------+
+|  1 | Ratan | NULL   |  10000 | 2022-11-22 |
+|  2 | Romil | NULL   |  20000 | 2022-10-23 |
+|  3 | Gavde | f      |   9000 | 2022-11-22 |
++----+-------+--------+--------+------------+
+3 rows in set (0.00 sec)
+
+mysql> update employee_payroll set gender='m' where name="Ratan";
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+-------+--------+--------+------------+
+| id | name  | gender | salary | startdate  |
++----+-------+--------+--------+------------+
+|  1 | Ratan | m      |  10000 | 2022-11-22 |
+|  2 | Romil | NULL   |  20000 | 2022-10-23 |
+|  3 | Gavde | f      |   9000 | 2022-11-22 |
++----+-------+--------+--------+------------+
+3 rows in set (0.00 sec)
+
+mysql> update employee_payroll set gender='m' where name="Romil";
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+-------+--------+--------+------------+
+| id | name  | gender | salary | startdate  |
++----+-------+--------+--------+------------+
+|  1 | Ratan | m      |  10000 | 2022-11-22 |
+|  2 | Romil | m      |  20000 | 2022-10-23 |
+|  3 | Gavde | f      |   9000 | 2022-11-22 |
++----+-------+--------+--------+------------+
+3 rows in set (0.00 sec)
+
