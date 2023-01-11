@@ -18,3 +18,24 @@ mysql> use payrollservice;
 Database changed
 mysql> create table employee_payroll(id int auto_increment,name varchar(40),salary int,startdate date,primary key(id));
 Query OK, 0 rows affected (0.33 sec);
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| payrollservice     |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use payrollservice
+Database changed
+mysql> insert into employee_payroll(name,salary,startdate)values("Ratan",10000,'2022-11-22'),("Romil",20000,'2022-10-23');
+Query OK, 2 rows affected (0.76 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> insert into employee_payroll(name,salary,startdate)values("Gavde",10000,'2022-11-22');
+Query OK, 1 row affected (0.10 sec)
