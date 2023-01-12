@@ -263,3 +263,13 @@ mysql> select * from employee_payroll;
 |  3 | Gavde | f      |   9000 | 2022-11-22 | 988980888   | Sangali  | Computer Science    | 10k      | 5k        | 3k         | 2k        | 6k     |
 +----+-------+--------+--------+------------+-------------+----------+---------------------+----------+-----------+------------+-----------+--------+
 3 rows in set (0.00 sec)
+
+mysql> create table EmployeeDept(id int primary key auto_increment,department_id int ,designation varchar(20),foreign key(department_id) references employee_payroll(id);
+
+mysql> select * from employee_payroll where name='Ratan';
++----+-------+--------+--------+------------+-------------+----------+---------------------+----------+-----------+------------+-----------+--------+
+| id | name  | gender | salary | startdate  | phonenumber | Address  | Department          | BasicPay | deduction | Taxpayable | incometax | netpay |
++----+-------+--------+--------+------------+-------------+----------+---------------------+----------+-----------+------------+-----------+--------+
+|  1 | Ratan | m      |  10000 | 2022-11-22 | 988989888   | Chikkodi | Information Science | 10k      | 5k        | 3k         | 2k        | 6k     |
++----+-------+--------+--------+------------+-------------+----------+---------------------+----------+-----------+------------+-----------+--------+
+1 row in set (0.00 sec)
