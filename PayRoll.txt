@@ -246,3 +246,20 @@ mysql> select * from employee_payroll;
 |  3 | Gavde | f      |   9000 | 2022-11-22 | 988980888   | Sangali  | Computer Science    |
 +----+-------+--------+--------+------------+-------------+----------+---------------------+
 3 rows in set (0.00 sec)
+
+mysql> alter table employee_payroll add column BasicPay varchar(20),add column deduction varchar(20),add column Taxpayable varchar(20),add column incometax varchar(20),add column netpay varchar(30);
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+mysql> update employee_payroll set BasicPay='10k',deduction='5k',Taxpayable='3k',incometax='2k',netpay='6k';
+Query OK, 3 rows affected (0.04 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+-------+--------+--------+------------+-------------+----------+---------------------+----------+-----------+------------+-----------+--------+
+| id | name  | gender | salary | startdate  | phonenumber | Address  | Department          | BasicPay | deduction | Taxpayable | incometax | netpay |
++----+-------+--------+--------+------------+-------------+----------+---------------------+----------+-----------+------------+-----------+--------+
+|  1 | Ratan | m      |  10000 | 2022-11-22 | 988989888   | Chikkodi | Information Science | 10k      | 5k        | 3k         | 2k        | 6k     |
+|  2 | Romil | m      |  20000 | 2022-10-23 | 988980888   | Kolapur  | Mechanical          | 10k      | 5k        | 3k         | 2k        | 6k     |
+|  3 | Gavde | f      |   9000 | 2022-11-22 | 988980888   | Sangali  | Computer Science    | 10k      | 5k        | 3k         | 2k        | 6k     |
++----+-------+--------+--------+------------+-------------+----------+---------------------+----------+-----------+------------+-----------+--------+
+3 rows in set (0.00 sec)
